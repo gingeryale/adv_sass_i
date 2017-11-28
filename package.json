@@ -1,0 +1,16 @@
+{
+  "name": "natours udemy advanced sass with js",
+  "version": "1.0.0",
+  "description": "advanced sass class using the box model and sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.0",
+    "node-sass": "^4.7.2"
+  }
+}

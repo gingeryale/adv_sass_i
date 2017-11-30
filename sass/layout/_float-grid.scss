@@ -1,0 +1,54 @@
+
+.row {
+  max-width:$float-width;
+  background-color:$float-bg;
+  margin: 0 $float-gutt-h;
+
+
+    &:not(:last-child) {
+      margin-bottom: $float-gutt-v;
+  }
+
+  @include clearfix;
+
+  [class^="col-"] {
+    background-color: $float-row-bg;
+      float: left;
+    &:not(:last-child) {
+      margin-right: $float-gutt-h;
+    }
+  }
+
+  .col-1-of-2 {
+      width: calc((100% - #{$float-gutt-h}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{$float-gutt-h}) / 3);
+  }
+  .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * #{$float-gutt-h}) / 3) + #{$float-gutt-h});
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{$float-gutt-h}) / 4);
+  }
+
+  // .col-2-of-4 {
+  //   width: calc(2 * ((100% - 3 * #{$float-gutt-h}) / 4)+ 2* (#{$float-gutt-h}));
+  // }
+
+  .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * #{$float-gutt-h}) / 4) + #{$float-gutt-h} );
+  }
+
+  .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * #{$float-gutt-h}) / 4) + 2 * (#{$float-gutt-h}) );
+  }
+
+}
+
+
+
+
+

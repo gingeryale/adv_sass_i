@@ -1,7 +1,7 @@
 
 .row {
   max-width:$float-width;
-  background-color:$float-bg;
+  // background-color:$float-bg;
   margin: 0 $float-gutt-h;
 
 
@@ -12,7 +12,7 @@
   @include clearfix;
 
   [class^="col-"] {
-    background-color: $float-row-bg;
+    // background-color: $float-row-bg;
       float: left;
     &:not(:last-child) {
       margin-right: $float-gutt-h;

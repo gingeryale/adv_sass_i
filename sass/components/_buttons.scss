@@ -1,5 +1,6 @@
 
 .btn{
+	&,
 	&:link, &:visited {
 		text-transform: uppercase;
 		text-decoration: none;
@@ -9,6 +10,10 @@
 		transition: all .2s;
 		position: relative;
 		font-size: $default-font-size;
+
+		// mod for button elm
+		border: none;
+		cursor: pointer;
 	}
 
 		&--animated{
@@ -38,7 +43,9 @@
 				opacity: 0;
 			}
 		}
-		&:active{
+		&:active,
+		&:focus{
+			outline: none;
 			transform: translateY(-0.1rem);
 			box-shadow: 0 .5rem 1rem rgba($color-black, .2)
 		}

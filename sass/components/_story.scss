@@ -1,0 +1,32 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, .1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left:9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  &__shape {
+    // to use shape-outside must have W+H float
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    background-color: $color-primary;
+    -webkit-shape-outisde: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    //to make el look like circle
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translate(-3rem) skewX(12deg);
+  }
+  &__img{
+    height: 100%;
+  }
+  &__text {
+    transform: skewX(12deg);
+  }
+}

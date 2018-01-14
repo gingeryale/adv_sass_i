@@ -3,9 +3,23 @@
 *::before {
 	padding: 0;
 	margin: 0;
+	box-sizing: inherit;
 }
 html{
 	font-size: 62.5%;
+
+	@include respond(phone){
+	font-size: 50%;
+}
+@include respond(tab-port){
+	font-size: 60%;
+}
+@include respond(tab-land){
+	font-size: 70%;
+}
+@include respond(desktop){
+	font-size: 80%;
+	}
 }
 
 body {

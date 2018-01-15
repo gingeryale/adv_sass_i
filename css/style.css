@@ -364,7 +364,7 @@ body {
     height: 15rem;
     float: left;
     background-color: #55c57a;
-    -webkit-shape-outisde: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
     position: relative;
     -webkit-clip-path: circle(50% at 50% 50%);

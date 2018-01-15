@@ -20,9 +20,9 @@
 // normal
 // big desktop +1800px (min-width)
 
-@mixin respond-phone {
-	@media (max-width: 600px) {	@content };
-}
+// @mixin respond-phone {
+// 	@media (max-width: 600px) {	@content };
+// }
 
 
 // phone
@@ -30,7 +30,7 @@
 // tab-land
 // desktop
 
-@minxin respond($breakpoint) {
+@mixin respond($breakpoint) {
 	@if $breakpoint == phone {
 		@media (max-width: 600px) {	@content };
 	}

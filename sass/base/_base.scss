@@ -6,23 +6,26 @@
 	box-sizing: inherit;
 }
 html{
-	font-size: 62.5%;
+	font-size: 62.5%; // 1rem = 10px/16px = 62.5
 
-	@include respond(phone){
-	font-size: 50%;
+
+@include respond-to(tab-land){ // max-width 1200px
+	font-size: 56.25%; // 1rem = 9px;
 }
-@include respond(tab-port){
-	font-size: 60%;
+@include respond-to(tab-port){ // max-width 900px
+	font-size: 50%; // 1rem = 8px
 }
-@include respond(tab-land){
-	font-size: 70%;
-}
-@include respond(desktop){
-	font-size: 80%;
+@include respond-to(pc){ // min-width 1800
+	font-size: 75%; // 1rem = 12px
 	}
 }
 
 body {
 
 	box-sizing: border-box;
+	padding: 3rem;
+
+	@include respond-to(tab-port){
+	padding: 0;
+}
 }

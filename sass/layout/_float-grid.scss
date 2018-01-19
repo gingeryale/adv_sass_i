@@ -2,11 +2,22 @@
 .row {
   max-width:$float-width;
   // background-color:$float-bg;
-  margin: 0 $float-gutt-h;
+  margin: 0 auto;
 
 
     &:not(:last-child) {
       margin-bottom: $float-gutt-v;
+
+      @include respond-to(tab-port){
+        margin-bottom: $float-gutt-v-sm;
+      }
+  }
+  @include respond-to(tab-port){
+    max-width:50rem;
+    padding: 0 3rem;
+  }
+  @include respond-to(phone){
+    max-width:30rem;
   }
 
   @include clearfix;
@@ -17,6 +28,14 @@
     &:not(:last-child) {
       margin-right: $float-gutt-h;
     }
+    @include respond-to(tab-port){
+        margin-right:0;
+        margin-bottom: $float-gutt-v-sm;
+      }
+
+      @include respond-to(tab-port){
+        width:100% !important;
+      }
   }
 
   .col-1-of-2 {

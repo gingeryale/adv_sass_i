@@ -9,20 +9,33 @@
   font-size: $default-font-size;
   transform: skewX(-12deg);
 
+  @include respond-to(tab-port){
+    width: 100%;
+    padding: 4rem;
+    padding-left:7rem;
+  }
+  @include respond-to(phone) {
+      transform: skewX(0);
+  }
+
   &__shape {
     // to use shape-outside must have W+H float
     width: 15rem;
     height: 15rem;
     float: left;
     background-color: $color-primary;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
     position: relative;
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
 
     //to make el look like circle
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     transform: translate(-3rem) skewX(12deg);
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+
+     @include respond-to(phone) {
+        transform: translate(-3rem) skewX(0);
+    }
   }
   &__img{
     height: 100%;
@@ -32,6 +45,8 @@
   }
   &__text {
     transform: skewX(12deg);
+
+      transform: skewX(0);
   }
   &__caption {
     position: absolute;

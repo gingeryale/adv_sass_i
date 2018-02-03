@@ -300,6 +300,7 @@ body {
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba(17, 17, 17, 0.15);
     overflow: hidden;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
     .card__side--front {
       position: absolute;
@@ -440,11 +441,16 @@ body {
     float: left;
     background-color: #55c57a;
     position: relative;
-    shape-outside: circle(50% at 50% 50%);
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    transform: translate(-3rem) skewX(12deg);
-    clip-path: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%); }
+    overflow: hidden;
+    border-radius: 50%;
+    transform: translate(-3rem) skewX(12deg); }
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      .story__shape {
+        clip-path: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        border-radius: none; } }
     @media (max-width: 37.5em) {
       .story__shape {
         transform: translate(-3rem) skewX(0); } }
@@ -585,6 +591,11 @@ body {
     opacity: 1;
     visibility: visible;
     transition: all .3s; }
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+      .popup:target {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(17, 17, 17, 0.3); } }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -757,13 +768,16 @@ body {
   top: 0; }
 
 .header {
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); }
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  position: relative; }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    .header {
+      height: 95vh;
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {

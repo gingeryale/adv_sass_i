@@ -25,13 +25,19 @@
     float: left;
     background-color: $color-primary;
     position: relative;
-    shape-outside: circle(50% at 50% 50%);
-    -webkit-shape-outside: circle(50% at 50% 50%);
+    overflow: hidden;
+    border-radius: 50%;
 
     //to make el look like circle
     transform: translate(-3rem) skewX(12deg);
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
     clip-path: circle(50% at 50% 50%);
     -webkit-clip-path: circle(50% at 50% 50%);
+     shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    border-radius: none;
+    }
 
      @include respond-to(phone) {
         transform: translate(-3rem) skewX(0);

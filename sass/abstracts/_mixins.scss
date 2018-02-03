@@ -35,12 +35,12 @@
 		@media (max-width: 37.5em) {	@content };// 600px / 16
 	}
 	@if $breakpoint == tab-port { 
-		@media (max-width: 56.25em) {	@content };// 900
+		@media (max-width: 56.25em) {	@content };// 900px
 	}
 	@if $breakpoint == tab-land {
-		@media (max-width: 75em) { @content };// 1200
+		@media (max-width: 75em) { @content };// 1200px
 	}
 	@if $breakpoint == pc {
-		@media (min-width: 112.5em) { @content };// +1800
+		@media (min-width: 112.5em) { @content };// +1800px
 	}
 }
